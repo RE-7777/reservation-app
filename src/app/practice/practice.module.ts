@@ -11,7 +11,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-
+import { MatIconModule } from '@angular/material/icon';
 
 
 const routes: Routes = [
@@ -19,7 +19,7 @@ const routes: Routes = [
         path:'practice',component:PracticeComponent,
         children:[
             {path: '', component: PracticeComponent},
-            // {path:':productId', component: ProductDetailComponent}
+            {path:':rowName', component: PracticeComponent}
         ]
     }
 
@@ -40,8 +40,8 @@ const routes: Routes = [
     ReactiveFormsModule,  
     BrowserAnimationsModule,   
     BrowserModule,
-    FontAwesomeModule
-    
+    FontAwesomeModule,
+    MatIconModule
     
     
   ],
