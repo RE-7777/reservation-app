@@ -59,6 +59,10 @@
                               </div>
                               <button [disabled]="!loginForm.valid" class="btn btn-danger btn-block btn-round" type="submit">Login</button>
                           </form>
+                          <br />
+                          <div *ngIf="errors && errors.length>0" class="alert alert-danger">
+                            <p *ngFor="let error of errors"> {{ error.detail }}</p>
+                          </div>
                           <div class="forgot">
                               <a href="#" class="btn btn-link btn-danger">Forgot password?</a>
                           </div>

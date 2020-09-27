@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
         this.errors = err.error.errors;
       }
     )
-    console.log(loginForm.value);
+    
   }
 
 }
