@@ -1,6 +1,7 @@
 import{ Injectable } from '@angular/core'
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Injectable()
 export class AuthService{
@@ -11,7 +12,12 @@ export class AuthService{
         return this.http.post('/api/v1/users/register' , userData);
     }
     login(userData: any): Observable<any> {
-        // debugger
-        return this.http.post('/api/v1/users/login' , userData);
+        debugger
+        return this.http.post('/api/v1/users/login' , userData).pipe(map(
+            (token: string) => {
+                localStorage.setItem('app-auth',token);
+                return token;
+            }
+        ));
     }
 }
