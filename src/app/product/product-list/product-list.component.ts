@@ -18,8 +18,8 @@ export class ProductListComponent implements OnInit {
     const productsObservable=this.productservice.getProducts();
     productsObservable.subscribe(
       (data) => { 
-        this.products=data;
-        console.log('got value '+data)
+        this.products = data;
+        console.log('got value ' + data)
         // debugger
       },
       // (err) => { console.error('something wrong occurred ' + err) },
